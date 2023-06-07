@@ -15,7 +15,7 @@ const generateId = () => {
 
 // Initial state
 const initialState = {
-    toast: [],
+    toast: [], // toast array
 };
 
 // Reducer
