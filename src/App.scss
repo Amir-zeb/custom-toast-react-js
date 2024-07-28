@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.app_container{
+  padding: 30px 50px;
+  max-width: 550px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+%common{
+  border:1px solid #ccc;
+  border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputs_container{
   display: flex;
+  margin-top: 0.875rem;
+  margin-bottom: 0.875rem;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  >label{
+    margin-bottom: 5px;
+  }
+  >select,input,textarea{
+    width: 100%;
+    margin-bottom: 0.875rem;
+    padding: 15px 10px;
+    background-color: #f3f3f3;
+    @extend %common;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button[aria-label='add toast']{
+  @extend %common;
+  padding: 10px 25px;
 }
