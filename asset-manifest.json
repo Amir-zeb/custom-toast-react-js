@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/custom-toast-react-js/static/css/main.f9c205ef.css",
+    "main.js": "/custom-toast-react-js/static/js/main.3db766fe.js",
+    "static/js/453.cfedae39.chunk.js": "/custom-toast-react-js/static/js/453.cfedae39.chunk.js",
+    "static/media/logo.svg": "/custom-toast-react-js/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/custom-toast-react-js/index.html",
+    "main.f9c205ef.css.map": "/custom-toast-react-js/static/css/main.f9c205ef.css.map",
+    "main.3db766fe.js.map": "/custom-toast-react-js/static/js/main.3db766fe.js.map",
+    "453.cfedae39.chunk.js.map": "/custom-toast-react-js/static/js/453.cfedae39.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9c205ef.css",
+    "static/js/main.3db766fe.js"
+  ]
+}
