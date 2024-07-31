@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+## Custom Toast Component in React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and customizable toast notification component built with React.js.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the live demo of the custom toast component [here](https://amir-zeb.github.io/custom-toast-react-js/).
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Display different types of toast notifications (error, success, info, warning, message).
+- Auto-hide toasts after a specified duration.
+- Manually dismiss toasts.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/amir-zeb/custom-toast-react-js.git
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
+    ```sh
+    cd custom-toast-react-js
+    ```sh
 
-### `npm run build`
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```sh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Import the ToastProvider and wrap your application with it:
+    ```sh
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App';
+    import { ToastProvider } from './context/toast-context';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ReactDOM.render(
+    <ToastProvider>
+        <App />
+    </ToastProvider>,
+    document.getElementById('root')
+    );
+    ```sh
 
-### `npm run eject`
+2. Use the Toast component in your application:
+    ```sh
+    import React from 'react';
+    import Toast from './components/Toast';
+    function App() {
+    return (
+        <div className="App">
+            <h1>Custom Toast Component</h1>
+            <Toast />
+            {/* Your other components */}
+        </div>
+    );
+    }
+    export default App;
+    ```sh
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Add toasts using the addToast function provided by the ToastContext:
+    ```sh
+    import React, { useContext } from 'react';
+    import { ToastContext } from './context/toast-context';
+    function MyComponent() {
+        const { addToast } = useContext(ToastContext);
+        const showToast = () => {
+            addToast({
+            type: 'success',
+            message: 'This is a success toast!',
+            duration: 3000,
+            });
+        };
+        return (
+            <button onClick={showToast}>Show Toast</button>
+        );
+    }
+    export default MyComponent;
+    ```sh
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can customize the toast appearance by modifying the toast.scss file.
