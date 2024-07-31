@@ -22,12 +22,12 @@ Check out the live demo of the custom toast component [here](https://amir-zeb.gi
 2. Navigate to the project directory:
     ```sh
     cd custom-toast-react-js
-    ```sh
+    ```
 
 3. Install the dependencies:
     ```sh
     npm install
-    ```sh
+    ```
 
 ## Usage
 
@@ -44,7 +44,7 @@ Check out the live demo of the custom toast component [here](https://amir-zeb.gi
     </ToastProvider>,
     document.getElementById('root')
     );
-    ```sh
+    ```
 
 2. Use the Toast component in your application:
     ```sh
@@ -60,7 +60,7 @@ Check out the live demo of the custom toast component [here](https://amir-zeb.gi
     );
     }
     export default App;
-    ```sh
+    ```
 
 3. Add toasts using the addToast function provided by the ToastContext:
     ```sh
@@ -80,7 +80,7 @@ Check out the live demo of the custom toast component [here](https://amir-zeb.gi
         );
     }
     export default MyComponent;
-    ```sh
+    ```
 
 ## Customization
 
