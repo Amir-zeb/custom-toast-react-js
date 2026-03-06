@@ -6,10 +6,6 @@ function Toast() {
     const { state, removeToast } = useContext(ToastContext);
     const { toast } = state;
 
-    useEffect(() => {
-        console.log("🚀 ~ file: Toast.jsx:8 ~ Toast ~ toast:", toast)
-    }, [toast]);
-
     return (
         <>
             {toast.length ? <div className="toast_container">
@@ -24,13 +20,13 @@ function Toast() {
 
 const Item = ({ item, removeToast }) => {
     const { message, type, duration } = item;
-    
+
     useEffect(() => {
         setTimeout(() => {
             removeToast(item.id);
         }, duration);
     }, []);
-    
+
     const hideToast = () => {
         removeToast(item.id);
     }
@@ -38,9 +34,9 @@ const Item = ({ item, removeToast }) => {
     return <div className={`${type}_toast __toast`}>
         <div>
             <p className="toast_title">{type}</p>
-            <p className="toast_msg">{message}</p>
+            <p className="toast_message">{message}</p>
         </div>
-        <button onClick={hideToast} aria-label="close">&times;</button>
+        <button onClick={hideToast} aria-label="close" className='close_button'>&times;</button>
     </div>
 }
 
